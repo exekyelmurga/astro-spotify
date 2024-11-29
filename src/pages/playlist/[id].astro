@@ -10,8 +10,7 @@ interface Props {
 
 const { id } = Astro.params
 const playlist = playlists.find((playlist) => playlist.id === id)
-const playListSongs = songs.filter((song) => song.albumId === playlist?.id)
-
+const playListSongs = songs.filter((song) => Number(song.albumId) === Number(playlist?.id))
 ---
 
 <Layout title="Spotify Clone">
