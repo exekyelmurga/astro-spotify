@@ -2,17 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import { playlists } from '@/lib/data';
 import LayoutPlaylistCard from '@/components/LayoutPlaylistCard.astro'
+import Greetings from '@/components/Greeting.svelte'
 ---
 
 <Layout title="Spotify Clone">
-    <div class="relative transition-all duration-1000 bg-green-600 z-10 px-6 pt-10">
-        <div class="flex flex-wrap mt-6 gap-4 items-center">
-
-            {
-                playlists.map(playlist=><LayoutPlaylistCard playlist={ playlist } />)
-            }
+    <div class="relative transition-all duration-1000 bg-green-600">
+        <div class="relative px-6 pt-10 z-10">
+            <Greetings />
+            <div class="flex flex-wrap mt-6 gap-4 items-center">
+                
+                {
+                    playlists.map(playlist=><LayoutPlaylistCard playlist={ playlist } />)
+                }
             </div>
-    <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/30 -z-[1]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/30 -z-[1]" />
+        </div>
 </div>
 
 </Layout>
