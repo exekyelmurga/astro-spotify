@@ -8,5 +8,5 @@ export default defineConfig({
     // ...
     output: 'server',
     adapter: vercel(),
-  integrations: [tailwind(), react()],
+    integrations: [tailwind(), react()],
 });
